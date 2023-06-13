@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import lombok.NoArgsConstructor;
+
 @Service
+@NoArgsConstructor
 public class RequestService {
 
 	private static List<Request> requestsDB = new ArrayList<>();

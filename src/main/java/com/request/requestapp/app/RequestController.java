@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Controller
 @RequestMapping
+@NoArgsConstructor
+@AllArgsConstructor
 public class RequestController {
 	
 	@Autowired
@@ -25,11 +29,11 @@ public class RequestController {
 	}
 
 	private Request prepareRequestFrom(HttpServletRequest request) {
-		String so = request.getHeader("sec-ch-ua-platform");
+		String requestId = request.getRequestId();
 		String ip = request.getHeader("X-Forwarded-For");
 		String agent = request.getHeader("User-Agent");
 		
-		return new Request(so, ip, agent);
+		return new Request(ip, agent, requestId);
 	}
 
 }

@@ -8,7 +8,7 @@
     <thead>
         <tr>
             <th> IP </th>
-            <th> SO </th>
+            <th> Request Id </th>
             <th> Agent </th>
         </tr>
     </thead>
@@ -18,7 +18,7 @@
         </tr>
         <tr th:each="r : ${requests}">
             <td><span th:text="${r.ip}"> IP </span></td>
-            <td><span th:text="${r.so}"> SO </span></td>
+            <td><span th:text="${r.requestId}"> Request Id </span></td>
             <td><span th:text="${r.agent}"> Agent </span></td>
         </tr>
     </tbody>
